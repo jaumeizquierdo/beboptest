@@ -1,0 +1,10 @@
+{ 
+    "title":"Lorem ipsum dolor sit amet, consectetur adipiscing",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id pharetra augue, eu cursus lectus. Nunc ac magna lacus. Nam rutrum iaculis ultricies. Cras facilisis dui non maximus tincidunt. In at mi libero. Donec nisi purus, posuere fermentum luctus accumsan, vulputate non libero. Praesent et pharetra urna. Vivamus lorem justo, congue nec magna quis, molestie lacinia risus. Sed leo tellus, finibus a elit ut, vestibulum posuere risus. Ut quam libero, congue eget feugiat vel, molestie ac neque. Curabitur pulvinar metus dolor, quis porttitor quam sagittis vel.",
+    "imgPath":"https://www.bebopstudio.es/test/img/imgHeader.png",
+    "content": [
+        {"title": "Donec luctus nibh massa", "description": "Suspendisse vitae mauris porttitor massa commodo vehicula a et nulla. Cras mollis neque ligula, nec maximus turpis tristique ac. Maecenas ultricies leo ac quam interdum interdum. Maecenas eget bibendum odio. Proin vel vehicula erat.", "imgPath":"https://www.bebopstudio.es/test/img/img1.png"},
+        {"title": "Maecenas id quam augue", "description": " Fusce ut augue sapien. Morbi semper, enim at commodo efficitur, odio libero dictum nibh, quis lobortis mi tortor eu risus. Fusce nulla massa, consequat nec enim id, posuere imperdiet ante. Morbi non consectetur nisi, et varius ex. Cras ultrices id eros iaculis tincidunt. Nunc bibendum risus in molestie euismod. In eu lectus eget nisi faucibus ", "imgPath":"https://www.bebopstudio.es/test/img/img2.png"}
+    ]
+
+}
