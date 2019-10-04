@@ -1,7 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
 
-$main-color: #5a6574;
+@import 'variables.scss';
+@import 'breakpoints.scss';
 
 @mixin fade-link {
     transition: all ease-in-out .3s; 
@@ -29,11 +30,29 @@ p {
     font-weight: 200;
     padding: 0;
     margin: 0;
+
+    @include media("≥mobile-s", "≤tablet") {
+        font-size: 14px;
+    }
+
+    @include media("≥tablet", "≤laptop") {
+        font-size: 16px;
+    }
+
+    @include media("≥laptop", "≤laptop-l") {
+        font-size: 18px;
+    }
 }
 
 .wrapper {
     width: 1780px;
     margin: 53px auto;
+
+    @include media("≥mobile-s", "≤main"){
+        width: 95%;
+        margin: 20px auto;
+    };
+      
 }
 
 header {
@@ -44,6 +63,16 @@ header {
         justify-content: center;
         align-items: center;
         background-size: auto;
+
+        @include media("≥mobile-s", "≤mobile-l") {
+            height: 257px;
+            background-size: cover !important;
+        }
+
+        @include media("≥mobile-l", "≤laptop") {
+            height: 357px;
+            background-size: cover !important;
+        }
     }
     h1 {
         font-size: 30px;
@@ -58,9 +87,31 @@ header {
             background-color: $main-color;
             margin: 24px auto 0 auto;
         }
+        @include media("≥mobile-s", "≤mobile-l") {
+            font-size: 14px;
+            font-weight: 500;
+            width: 120px;
+            &:after {
+                content: '';
+                width: 79px;
+            }
+        }
+        @include media("≥mobile-l", "≤laptop") {
+            font-size: 20px;
+            font-weight: 500;
+            width: 45%;
+            &:after {
+                content: '';
+                width: 85px;
+            }
+        }
     }
     p {
         margin: 53px 0;
+        @include media("≥mobile-s", "≤laptop-l") {
+            margin: 30px 0;
+            text-align: justify;
+        }
     }
 }
 
@@ -68,14 +119,37 @@ article {
 
     display: flex;
     margin-bottom: 53px;
+
     @include fade-link();
+
+    @include media("≥mobile-s", "<tablet") {
+        display: block;
+        margin-bottom: 30px;
+    }
     
     &:nth-child(even) {
         flex-direction: row-reverse;
+
+        @include media("≥mobile-s", "≤mobile-l") {
+            flex-direction: row;
+        }
     }
 
     h2 {
         font-size: 20px;
+
+        @include media("≥mobile-s", "≤tablet") {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+    
+        @include media("≥tablet", "≤laptop") {
+            font-size: 16px;
+        }
+    
+        @include media("≥laptop", "≤laptop-l") {
+            font-size: 18px;
+        }
     }
 
     .contentWrapper {
@@ -84,21 +158,52 @@ article {
         flex-direction: column;
         justify-content: center;
         margin: 0 auto;
+
+        @include media("≥mobile-s", "<tablet") {
+            width: 100%;
+        }
+
+        @include media("≥tablet", "≤main") {
+            width: 45%;
+        }
+
     }
 
     img {
         min-width: 890px;
         max-width: 890px;
+
+        @include media("≥mobile-s", "≤tablet") {
+            max-width: 100%;
+            min-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        @include media("≥tablet", "≤main") {
+            max-width: 50%;
+            min-width: 50%;
+        }
+
     }
 
     &:hover {
-        transform: scale(1.02) !important;
+        transform: scale(1.02);
         box-shadow: 0 0 2px #E0E0E0;
         filter: saturate(30%);
+
+        @include media("≥mobile-s", "≤laptop-l") {
+            transform: none;
+            box-shadow: none;
+            filter: none;
+        }
     }
 
     &:last-child {
         margin-bottom: 100px;
+
+        @include media("≥mobile-s", "≤mobile-l") {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -111,76 +216,8 @@ footer {
         &:hover {
             transform: rotate(40deg) scale(1.1);
         }
-    }
-}
-
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-
-    p {
-        font-size: 14px;
-    }
-
-    .wrapper {
-        width: 320px;
-        margin: 32px auto;
-    }
-
-    header {
-        .headerBg {
-            width: 100%;
-            height: 257px;
-            background-size: cover !important;
-        }
-        p {
-            margin: 30px 0;
-            text-align: justify;
-        }
-        h1 {
-            font-size: 14px;
-            font-weight: 500;
-            width: 120px;
-            &:after {
-                content: '';
-                display: block;
-                width: 79px;
-                height: 1px;
-                margin: 12px auto 0 auto;
-            }
-        }
-    }
-
-    article {
-
-        display: block;
-        margin-bottom: 30px;
-
-        img {
-            max-width: 100%;
-            min-width: 100%;
-            margin-bottom: 22px;
-        }
-
-        h2 {
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .contentWrapper {
-            width: 100%;
-        }
-
-        &:nth-child(even) {
-            flex-direction: row;
-        }
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    footer {
-        .logo {
+        
+        @include media("≥mobile-s", "≤mobile-l") {
             margin: 30px auto 0 auto;
             width: 70px;
         }
